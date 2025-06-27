@@ -1,0 +1,8 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "shared UI components between apps.",
+  "author": "",
+  "main": "src/index.ts"
+}
