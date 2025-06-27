@@ -1,0 +1,1 @@
+# For properly generate tailwindcss classes in v4, we have to add `@source <path to packages/ui>;` directive to apps' global css file.
