@@ -3,11 +3,23 @@
   "version": "1.0.0",
   "private": true,
   "description": "shared UI components between apps.",
-  "main": "src/index.ts",
+  "exports": {
+    "./blocks/*": "./src/blocks/*.tsx",
+    "./components/*": "./src/components/*.tsx",
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "src"
+  ],
   "devDependencies": {
     "@types/react": "^19.1.8",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.1.1",
+    "react-hook-form": "^7.59.0",
+    "zod": "^3.25.67"
   }
 }
