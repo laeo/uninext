@@ -8,6 +8,7 @@ export const auth = betterAuth({
         provider: 'sqlite',
         usePlural: true,
     }),
+    trustedOrigins: (req) => [req.headers.get('origin') ?? process.env.BETTER_AUTH_URL ?? ''],
     plugins: [
         admin(),
         bearer(),
