@@ -1,34 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Redirect, Route } from 'react-router';
+import { IonReactRouter } from '@ionic/react-router';
+import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+
+import HomePage from './pages/HomePage';
+
+setupIonicReact();
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <Route path='/home' exact component={HomePage} />
+          <Redirect exact from='/' to='/home' />
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
   )
 }
 
