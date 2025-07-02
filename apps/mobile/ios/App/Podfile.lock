@@ -4,11 +4,14 @@ PODS:
   - CapacitorCordova (7.4.0)
   - CapacitorPreferences (7.0.1):
     - Capacitor
+  - CapacitorSplashScreen (7.0.1):
+    - Capacitor
 
 DEPENDENCIES:
   - "Capacitor (from `../../../../node_modules/@capacitor/ios`)"
   - "CapacitorCordova (from `../../../../node_modules/@capacitor/ios`)"
   - "CapacitorPreferences (from `../../../../node_modules/@capacitor/preferences`)"
+  - "CapacitorSplashScreen (from `../../../../node_modules/@capacitor/splash-screen`)"
 
 EXTERNAL SOURCES:
   Capacitor:
@@ -17,12 +20,15 @@ EXTERNAL SOURCES:
     :path: "../../../../node_modules/@capacitor/ios"
   CapacitorPreferences:
     :path: "../../../../node_modules/@capacitor/preferences"
+  CapacitorSplashScreen:
+    :path: "../../../../node_modules/@capacitor/splash-screen"
 
 SPEC CHECKSUMS:
   Capacitor: 10feab36396883c55373328124a677f118cd4b5f
   CapacitorCordova: 723e017d8a80ab2ede9959fbe37556c35ac860d5
   CapacitorPreferences: 6c98117d4d7508034a4af9db64d6b26fc75d7b94
+  CapacitorSplashScreen: 1d67815a422a9b61539c94f283c08ed56667c0fc
 
-PODFILE CHECKSUM: 8eb2182bf56529813e65213142add7e255765fde
+PODFILE CHECKSUM: 39e18c89e51b715d06bff65e6a735045b028b4f7
 
 COCOAPODS: 1.16.2

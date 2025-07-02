@@ -7,10 +7,16 @@ import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
 import { authStore } from './store/auth';
 import { useSnapshot } from 'valtio';
+import { useEffect } from 'react';
+import { SplashScreen } from '@capacitor/splash-screen';
 
 setupIonicReact();
 
 function App() {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+
   const snap = useSnapshot(authStore);
 
   return (
