@@ -1,6 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonRouterLink, useIonRouter } from "@ionic/react";
 import LoginForm, { type LoginFormValues } from "ui/blocks/forms/LoginForm";
 import { authClient } from "../auth-client";
+import { authStore } from "../store/auth";
 
 export default function LoginPage() {
     const router = useIonRouter();
@@ -14,8 +15,9 @@ export default function LoginPage() {
         console.log(data, error);
 
         if (data) {
-            localStorage.setItem('bearer_token', data.token);
-            router.push('/', 'root', 'replace');
+            authStore.token = data.token;
+            authStore.user = data.user;
+            router.push('/home', 'root', 'replace');
         }
     };
 

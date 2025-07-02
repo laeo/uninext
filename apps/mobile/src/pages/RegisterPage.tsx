@@ -1,6 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonRouterLink, useIonRouter } from "@ionic/react";
 import RegisterForm, { type RegisterFormValues } from "ui/blocks/forms/RegisterForm";
 import { authClient } from "../auth-client";
+import { authStore } from "../store/auth";
 
 export default function RegisterPage() {
     const router = useIonRouter();
@@ -15,8 +16,9 @@ export default function RegisterPage() {
         console.log(data, error);
 
         if (data?.token) {
-            localStorage.setItem('bearer_token', data.token);
-            router.push('/', 'root', 'replace');
+            authStore.token = data.token;
+            authStore.user = data.user;
+            router.push('/home', 'root', 'replace');
         }
     };
 
