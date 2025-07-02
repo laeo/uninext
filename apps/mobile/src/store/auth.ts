@@ -16,7 +16,7 @@ export const authStore = proxy<AuthState>({
 
 const STORE_KEY = 'authState';
 
-export async function setup() {
+export async function setupAuthStore() {
     const { value } = await Preferences.get({ key: STORE_KEY });
     if (value) {
         const local: AuthState = JSON.parse(value);

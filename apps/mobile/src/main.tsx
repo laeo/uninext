@@ -18,12 +18,17 @@ import '@ionic/react/css/core.css'
 
 import './index.css'
 import App from './App.tsx'
-import { setup } from './store/auth.ts'
+import { setupAuthStore } from './store/auth.ts'
+import { setupRuntimeStore } from './store/runtime.ts'
 
-setup().then(() => {
-  createRoot(document.getElementById('root')!).render(
-    <StrictMode>
-      <App />
-    </StrictMode>,
-  )
-})
+Promise.all([setupAuthStore(), setupRuntimeStore()])
+  .then(() => {
+    createRoot(document.getElementById('root')!).render(
+      <StrictMode>
+        <App />
+      </StrictMode>,
+    )
+  })
+  .catch((reason) => {
+    console.error(reason);
+  })
