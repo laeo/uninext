@@ -1,4 +1,5 @@
-import { IonContent, IonHeader, IonPage } from "@ionic/react";
+import "./HomePage.css";
+import { IonContent, IonPage } from "@ionic/react";
 import { useSnapshot } from "valtio";
 import { authStore } from "../store/auth";
 
@@ -7,7 +8,6 @@ export default function HomePage() {
 
     return (
         <IonPage>
-            <IonHeader></IonHeader>
             <IonContent>
                 <main>welcome, {snap.user?.name}</main>
             </IonContent>
